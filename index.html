@@ -1,9 +1,159 @@
- <!DOCTYPE html>
-<HTML>
-  <head>
-    <title>sorpresasdecupido</title>
-  </head>
-  <body>
-    <h1>sorpresasdecupido</h1>
-  </body>  
-</HTML>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sorpresas de Cupido · En construcción</title>
+
+  <style>
+    :root {
+      --rosa: #ff6b9d;
+      --rosa-claro: #ffe4ee;
+      --rojo: #d73251;
+      --texto: #2c2c2c;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, var(--rosa-claro), #ffffff);
+      color: var(--texto);
+    }
+
+    .container {
+      background: #ffffffcc;
+      backdrop-filter: blur(6px);
+      padding: 3rem 2.5rem;
+      border-radius: 24px;
+      text-align: center;
+      max-width: 520px;
+      width: 90%;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+      animation: aparecer 1s ease forwards;
+    }
+
+    /* LOGO */
+    .logo-wrapper {
+      width: 160px;
+      height: 160px;
+      margin: 0 auto 1.5rem;
+      border-radius: 50%;
+      border: 3px dashed var(--rosa);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: pulso 2s infinite ease-in-out;
+    }
+
+    .logo-mask {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      overflow: hidden; /* RECORTE REAL */
+    }
+
+    .logo-mask img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* ideal para logos */
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: var(--rojo);
+      margin-bottom: 0.75rem;
+      animation: subir 0.8s ease forwards;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: aparecer 0.8s ease forwards;
+      animation-delay: 0.3s;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      opacity: 0;
+      animation: aparecer 0.8s ease forwards;
+      animation-delay: 0.6s;
+    }
+
+    .corazon {
+      margin-top: 1.5rem;
+      font-size: 2rem;
+      animation: latido 1.4s infinite ease-in-out;
+    }
+
+    /* ANIMACIONES */
+    @keyframes pulso {
+      0% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.05); opacity: 1; }
+      100% { transform: scale(1); opacity: 0.8; }
+    }
+
+    @keyframes latido {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes subir {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 480px) {
+      h1 { font-size: 1.6rem; }
+      .logo-wrapper {
+        width: 130px;
+        height: 130px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- LOGO -->
+    <div class="logo-wrapper">
+      <div class="logo-mask">
+        <!-- Cambia el archivo por tu logo -->
+        <img src="logo.svg" alt="Sorpresas de Cupido">
+      </div>
+    </div>
+
+    <h1>Sorpresas de Cupido</h1>
+    <h2>Muy pronto tendremos nuestra web 💕</h2>
+
+    <p>
+      Estamos trabajando con mucho amor en algo especial para ti.<br>
+      Por ahora nuestro sitio se encuentra en construcción,<br>
+      pero pronto podrás sorprender a quien más quieres.
+    </p>
+
+    <div class="corazon">❤️</div>
+
+  </div>
+
+</body>
+</html>
